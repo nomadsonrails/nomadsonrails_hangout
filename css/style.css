@@ -105,3 +105,24 @@ h1 {
 }
 
 #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+
+.social {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.social ul {
+  padding: 0;
+  margin: 0;
+}
+.social li {
+  background-size: 88px 88px;
+  display: inline-block;
+  width: 68px;
+  height: 68px;
+  padding: 0;
+  margin: 0;
+}
+.social li img {
+  width: 68px;
+  height: 68px;
+}
