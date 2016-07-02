@@ -2,48 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Landing Page</title>
-  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  <title>Hangout: Trabalho nos Estados Unidos</title>
+
+  <!-- Social: Facebook / Open Graph -->
+  <meta property="og:url" content="http://hangout.nomadsonrails.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hangout: Trabalho nos Estados Unidos">
+  <meta property="og:image" content="http://hangout.nomadsonrails.com/facebook.png"/>
+  <meta property="og:description" content="Um hangout descontraído reunindo profissionais que atualmente vivem nos Estados Unidos">
+  <meta property="og:site_name" content="Hangout: Trabalho nos Estados Unidos">
+  <meta property="article:author" content="https://www.facebook.com/pragmaticivan">
+  <meta property="article:publisher" content="https://www.facebook.com/pragmaticivan">
+
+  <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+  <link rel="shortcut icon" href="favicon.png">
 </head>
 
 <body>
   <div class="green-border"></div>
   <div class="header-logo">
-    <img src="images/logo.png" alt="Nomads on Rails Logo">
+    <img src="images/logo.png" alt="Nomads on Rails Logo" />
   </div>
   <div class="grey-wrapper">
-    <h1 class="header-words">
-      Hangout: Trabalho nos Estados Unidos
-    </h1>
+    <h1 class="header-words"> Hangout: Trabalho nos Estados Unidos</h1>
     <div class="hangouts">
       <img src="images/hangouts.png" alt="hangouts logo" />
     </div>
-    <h2 class="intro">
-      AS INSCRICOES TERMINAM EM
-    </h2>
 
     <div class="countdown">
+      <h2 class="intro"> As inscrições terminam em</h2>
       <ul>
-        <li>10<br><span>DIAS</span></li>
-        <li>11<br><span>DIAS</span></li>
-        <li>19<br><span>DIAS</span></li>
-        <li>09<br><span>DIAS</span></li>
+        <li><span class="clock-a"></span> :<br><span class="label">DIAS</span></li>
+        <li><span class="clock-b"></span> :<br><span class="label">HORAS</span></li>
+        <li><span class="clock-c"></span> :<br><span class="label">MINUTOS</span></li>
+        <li><span class="clock-d"></span> <br><span class="label">SEGUNDOS</span></li>
       </ul>
     </div>
   </div>
-  
-  <div class="question">
-    <p>
-      A revolucao digital esta comecando. Voce vai ficar para tras?
-    </p>
-  </div>
 
-  <div class="email-form">
-    <form action="submit-form-box" method="post">
-        <input type="text" placeholder="Seu Email Principal" name="email" class="placeholder">
-        <input type="submit" value="MANTENHA-ME INFORMADO!" class="submit-button">
+  <h3 class="question">A revolução digital está começando. Você vai ficar para trás?</h3>
+
+  <div id="mc_embed_signup" class="email-form">
+    <form action="https://ivansjr.us8.list-manage.com/subscribe/post?u=ae56667aa074d05a8082f4aea&amp;id=9d7db84daf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"  class="email" placeholder="Seu Email Principal" required>
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ae56667aa074d05a8082f4aea_9d7db84daf" tabindex="-1" value=""></div>
+        <input type="submit" value="MANTENHA-ME INFORMADO!" name="subscribe" id="mc-embedded-subscribe" class="submit-button">
     </form>
   </div>
 
+<script src="js/jquery.js" charset="utf-8"></script>
+<script src="js/jquery.countdown.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+  $('.countdown').countdown('07/09/2016 12:00:00')
+    .on('update.countdown', function(event) {
+      $('.clock-a').html(event.strftime('%D'));
+      $('.clock-b').html(event.strftime('%-H'));
+      $('.clock-c').html(event.strftime('%M'));
+      $('.clock-d').html(event.strftime('%S'));
+    })
+    .on('finish.countdown', function(event) {
+      $('.countdown').html('<h2 class="intro-gone"> AGUARDE. Inscrições encerradas :)</h2>')
+    });
+</script>
 </body>
 </html>
